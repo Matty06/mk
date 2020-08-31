@@ -3,6 +3,8 @@ $bg-color:          #000;
 $primary-color:     #fff;
 $secondary-color:   #E30A25;
 $name-fs:             56px;
+$tablet-breakpoint:   768px;
+$mobile-breakpoint:   425px;
 
 // fonts 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@700&display=swap');
@@ -12,6 +14,7 @@ body {
     color: $primary-color;
     z-index: 2;
 }
+
 #particles-js {
   position: absolute;
   left: 0;
@@ -23,15 +26,26 @@ body {
 .wrapper {
     z-index: 3;
     max-width: 400px;
-    margin: 0 auto;
-    padding-top: 120px;
+    margin: 150px auto 0;
     text-align: center;
+
+    @media all and (max-width: $mobile-breakpoint){
+        margin-top: 250px;
+    }
 
 
     &__name {
         margin-bottom: 15px;
         font-family: 'Poppins', sans-serif;
         font-size: $name-fs;
+
+        @media all and (max-width: $tablet-breakpoint){
+            font-size: $name-fs - 12px;
+        }
+
+        @media all and (max-width: $mobile-breakpoint){
+            font-size: $name-fs - 16px;
+        }
     }
 
     &__subtitle {
@@ -44,6 +58,10 @@ body {
         max-width: 50%;
         margin: 50px auto 0;
 
+        @media all and (max-width: $mobile-breakpoint){
+            max-width: 70%;
+        }
+
         .social-site {
             display: flex;
             justify-content: center;
@@ -52,6 +70,10 @@ body {
             background-color: $secondary-color;
             transition: .4s background-color;
             border-radius: 50%;
+
+            &:last-child {
+                margin-right: 0;
+            }
 
             &:hover,
             &:active,
