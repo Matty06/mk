@@ -1,0 +1,64 @@
+// variables
+$bg-color:          #000;
+$primary-color:     #fff;
+$secondary-color:   #E30A25;
+$name-fs:             56px;
+
+// fonts 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@700&display=swap');
+
+body {
+    background: $bg-color;
+    color: $primary-color;
+    z-index: 2;
+}
+#particles-js {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+.wrapper {
+    z-index: 3;
+    max-width: 400px;
+    margin: 0 auto;
+    padding-top: 120px;
+    text-align: center;
+
+
+    &__name {
+        margin-bottom: 15px;
+        font-family: 'Poppins', sans-serif;
+        font-size: $name-fs;
+    }
+
+    &__subtitle {
+        font-family: 'Playfair Display', sans-serif;
+    }
+
+    &__social {
+        display: flex;
+        justify-content: space-evenly;
+        max-width: 50%;
+        margin: 50px auto 0;
+
+        .social-site {
+            display: flex;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: $secondary-color;
+            transition: .4s background-color;
+            border-radius: 50%;
+
+            &:hover,
+            &:active,
+            &:focus {
+                transition: .4s background-color;
+                background-color: darken($secondary-color , 10%);
+            }
+        }
+    }
+}
