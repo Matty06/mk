@@ -33,7 +33,6 @@ body {
         margin-top: 250px;
     }
 
-
     &__name {
         margin-bottom: 15px;
         font-family: 'Poppins', sans-serif;
@@ -49,8 +48,34 @@ body {
     }
 
     &__subtitle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         font-family: 'Playfair Display', sans-serif;
+
+        .bullet {
+            width: 10px;
+            height: 10px;
+            margin-right: 10px;
+            background-color: $secondary-color;
+            border-radius: 50%;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1;
+
+            @media all and (max-width: $tablet-breakpoint) {
+                font-size: 18px;
+            }
+
+            @media all and (max-width: $mobile-breakpoint) {
+                font-size: 16px;
+            }
+        }
     }
+
+
 
     &__social {
         display: flex;
@@ -79,7 +104,7 @@ body {
             &:active,
             &:focus {
                 transition: .4s background-color;
-                background-color: darken($secondary-color , 10%);
+                background-color: darken($secondary-color , 15%);
             }
         }
     }
