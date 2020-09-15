@@ -2,28 +2,28 @@ let subtitleText = document.getElementById('subtitle').textContent;
 let subtitle = document.getElementById('subtitle');
 
 
-// 
-/*
-1. HTML/CSS coder
-2. UI/UX designer
-3. Instagram content creator
-4. Wedding photographer/videomaker
-*/
-
-var a = "HTML/CSS coder";
-var b = "UI/UX designer";
-var c = "Instagram content creator";
-var d = "Wedding photographer / videomaker";
+var i = 0;
 
 function replace(){
-  var i = 0;
+
   switch(i) {
     case 0: 
+    var newContent =  subtitleText.replace(subtitleText, "HTML/CSS coder");
+    subtitle.innerHTML = newContent;
+    break;
+
+    case 1: 
     var newContent =  subtitleText.replace(subtitleText, "UI/UX designer");
     subtitle.innerHTML = newContent;
     break;
-    case 1:
-      var newContent =  subtitleText.replace(subtitleText, "ad");
+
+    case 2:
+      var newContent =  subtitleText.replace(subtitleText, "Instagram content creator");
+      subtitle.innerHTML = newContent;
+      break;
+
+    case 3:
+      var newContent =  subtitleText.replace(subtitleText, "Wedding photographer / videomaker");
       subtitle.innerHTML = newContent;
       break;
   }
@@ -33,7 +33,10 @@ function replace(){
 setInterval(function(){
     // every 2s
     replace();
-    
+    i++;
+    if (i > 3) {
+      i = 0;
+    }
 }, 2000);
 
 
